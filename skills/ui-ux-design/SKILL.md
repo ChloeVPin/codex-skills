@@ -38,6 +38,261 @@ Do not treat this skill as a requirement to produce a large document for every r
 
 Before the first tool call in a multi-step task, briefly state the first action. During long work, report only meaningful phase changes.
 
+## Design direction before execution
+
+Do not begin from a generic “good UI” template. First derive a deliberate design direction from the brief, audience, product context, references, existing assets, and constraints.
+
+### Write a design read
+
+Before designing or coding, write one concise sentence:
+
+```text
+Design read: [interface type] for [audience] in [context], using a [visual language] direction optimized for [primary task].
+```
+
+Example:
+
+```text
+Design read: dense operations console for experienced support staff, using a restrained high-information visual language optimized for fast exception triage.
+```
+
+The design read is a hypothesis, not a fact. If the brief, references, and existing product disagree, state the disagreement and choose the direction that best supports the primary task.
+
+### Infer the direction from evidence
+
+Read these signals before choosing a visual language:
+
+- Interface type: marketing page, dashboard, editor, workflow, settings, commerce, documentation, social, portfolio, or public service
+- Audience: novice, expert, consumer, operator, administrator, executive, creator, or mixed
+- Context: high frequency, occasional, urgent, exploratory, trust-sensitive, regulated, offline, mobile, or collaborative
+- Product personality: calm, technical, editorial, playful, institutional, expressive, utilitarian, premium, or experimental
+- User-provided references: products, screenshots, URLs, brands, materials, typography, or motion examples
+- Existing assets: logo, colors, type, imagery, icons, components, and tokens
+- Quiet constraints: accessibility, localization, low bandwidth, small screens, assistive technology, or legal requirements
+
+Do not infer a visual direction from one adjective alone. “Premium” could mean restrained, editorial, precise, luxurious, technical, or quietly functional. Translate the adjective into concrete signals and ask one focused question only if those interpretations would materially diverge.
+
+### Set three design variables
+
+For non-trivial work, set these variables in the design read. Use a 1–10 scale and explain the choice briefly:
+
+```text
+Visual variance: [1–10] — how far the composition departs from familiar symmetry and default layouts.
+Motion energy: [1–10] — how much motion contributes to orientation, feedback, and expression.
+Information density: [1–10] — how much useful content is visible before progressive disclosure.
+```
+
+Use these as adaptable reasoning variables, not rigid numeric formulas.
+
+Suggested starting ranges:
+
+| Context | Variance | Motion | Density |
+| --- | ---: | ---: | ---: |
+| Public, regulated, or accessibility-critical service | 2–4 | 1–3 | 4–7 |
+| Enterprise workflow or operations tool | 3–5 | 1–4 | 6–9 |
+| Consumer product | 5–7 | 3–6 | 3–6 |
+| Editorial or content-led experience | 5–8 | 2–5 | 2–5 |
+| Brand, portfolio, or campaign experience | 6–9 | 4–8 | 2–5 |
+| Experimental or art-directed interface | 8–10 | 6–10 | 2–5 |
+
+Override these ranges when the brief or existing product provides stronger evidence. Higher variance never justifies confusing navigation or weak accessibility.
+
+## Anti-generic design directives
+
+These directives exist because language models frequently converge on familiar combinations that appear polished but communicate little about the product.
+
+### Do not use the default visual bundle
+
+Do not reach automatically for:
+
+- Centered hero content with a large gradient headline
+- Purple or blue “AI” gradients without a brand reason
+- Dark background, glowing blobs, and glass panels
+- Three equal feature cards with identical copy structure
+- Repeated rounded cards for every piece of content
+- Generic dashboard cards with oversized numbers and no decision context
+- Inter, a neutral gray palette, and arbitrary blue as a universal default
+- Random serif/sans font mixing to signal creativity
+- Decorative emojis replacing meaningful icons
+- Excessive blur, mesh gradients, noise, or glow
+- A carousel when a stable list or comparison would be clearer
+- A modal for information that belongs in the page flow
+- Toasts used for errors that require user action
+- Hover-only affordances for actions or critical information
+- Placeholder copy, lorem ipsum, invented metrics, or fake testimonials
+
+These patterns are not forbidden. They require a product-specific reason, coherent execution, and a clear explanation of the user problem they solve.
+
+### Force a point of view
+
+Every non-trivial design must make at least three deliberate choices that distinguish it from a generic template. Examples:
+
+- A specific content hierarchy based on the primary decision
+- A non-default composition suited to the task
+- A distinct type scale or editorial rhythm
+- A purposeful density strategy
+- A meaningful use of material, texture, illustration, or imagery
+- A deliberate motion language
+- A product-specific empty state or feedback pattern
+- A visual metaphor grounded in the product domain
+
+Do not add novelty for its own sake. A point of view is a coherent set of choices, not decoration.
+
+### Avoid symmetry as a reflex
+
+Use centered symmetry when the message, ritual, or brand genuinely calls for it. Otherwise consider:
+
+- Left-anchored content with a strong visual counterweight
+- Split composition
+- Asymmetric but readable whitespace
+- Editorial column structure
+- Progressive disclosure with one dominant decision area
+- Pinned context beside a changing work area
+- A timeline, canvas, map, or spatial layout when the domain supports it
+
+Do not make a layout asymmetric merely to appear original. The main reading path must remain obvious.
+
+## Visual system direction
+
+### Typography
+
+Choose typography based on product character, language needs, readability, and hierarchy—not because a font is currently popular.
+
+Define:
+
+- Display style and role
+- Body style and readable measure
+- UI label and control style
+- Numeric or data style when relevant
+- Weight range
+- Line-height strategy
+- Letter-spacing strategy
+- Fallback and loading behavior
+
+Rules:
+
+- Use no more than two font families unless the brand clearly requires more.
+- Use one family with weight, size, and spacing variation before adding a second family.
+- Do not mix a decorative serif into a sans-serif headline as a generic “creative” signal.
+- Keep display line-height open enough to avoid clipping, especially for italic text and descending glyphs.
+- Make body text readable before optimizing for visual compactness.
+- Use a meaningful type scale; do not choose unrelated sizes per component.
+- Verify language, numeral, and diacritic coverage when the interface is multilingual.
+
+### Color
+
+Define a semantic palette before choosing individual values:
+
+- Page and surface roles
+- Primary and secondary text
+- Borders and dividers
+- Interactive states
+- Focus indication
+- Positive, warning, negative, and informational status
+- Brand accent
+
+Rules:
+
+- Use one dominant accent unless the product domain requires multiple semantic colors.
+- Keep semantic status colors distinct from decorative accents.
+- Do not use color as the only carrier of state or priority.
+- Lock the palette across the page or product surface; do not drift between unrelated warm and cool neutrals.
+- Treat gradients as communication or atmosphere with a defined role, not as a substitute for hierarchy.
+- Test text, controls, focus indicators, and imagery overlays against their actual backgrounds.
+
+### Shape, surfaces, and material
+
+Choose a consistent geometry language: sharp and editorial, compact and technical, soft and approachable, rounded and consumer-oriented, or pill-shaped for explicit affordances only.
+
+Do not mix unrelated radius families, border treatments, and shadow styles without a documented reason. Use cards when separation or elevation communicates hierarchy. Otherwise use spacing, alignment, rules, or background changes to group content.
+
+Use shadows, blur, translucency, texture, and borders sparingly. Every material treatment must survive reduced-transparency preferences and maintain sufficient contrast.
+
+### Spacing and density
+
+Choose a density strategy based on the user’s work:
+
+- Low density: orientation, reading, reflection, or brand expression
+- Medium density: common consumer tasks and content browsing
+- High density: monitoring, comparison, editing, and operations
+
+Do not make a dense tool airy merely because whitespace looks polished. Do not make a reading experience dense merely to fit more content above the fold.
+
+Use a consistent spacing rhythm. Let hierarchy create emphasis instead of adding borders and containers to every element.
+
+## Composition and page architecture
+
+Before styling, define the composition:
+
+- What is the first thing the user should notice?
+- Where is the primary action?
+- What context must remain visible while the user works?
+- What can be deferred?
+- What is the visual anchor?
+- Where does the eye go next?
+- What changes across states?
+
+For marketing or editorial surfaces, avoid repeating the same section shape. Alternate composition, scale, alignment, and content rhythm only when the narrative supports it.
+
+For product surfaces, prioritize stable spatial memory. Do not introduce visual variety that makes recurring actions move unpredictably.
+
+For dashboards and data-heavy interfaces:
+
+- Organize around decisions, not arbitrary metrics.
+- Show context, comparison, time range, freshness, and ownership where relevant.
+- Avoid turning every metric into a floating card.
+- Use tables, lists, inline trends, grouping, and progressive disclosure when they communicate better than tiles.
+
+## Motion and interaction character
+
+Motion should explain change, preserve continuity, provide feedback, or establish product character.
+
+Choose a motion language: quiet and functional, direct and tactile, soft and reassuring, expressive and editorial, or energetic and playful.
+
+Rules:
+
+- Animate meaningful state changes before decorative entrances.
+- Use motion to preserve spatial continuity when content moves or transforms.
+- Avoid animation on every component or scroll event.
+- Do not delay critical content for spectacle.
+- Respect reduced-motion preferences.
+- Ensure keyboard and assistive-technology users receive equivalent information.
+- Do not use infinite loops unless they communicate ongoing status or are explicitly part of the experience.
+
+For controls, specify default, hover, focus-visible, pressed, disabled, loading, success, and error behavior where applicable. Feedback should confirm the user’s action without becoming noise.
+
+## Content quality and anti-placeholder rules
+
+Use real or clearly labeled representative content when content affects layout or credibility.
+
+- Do not invent customer names, statistics, ratings, logos, testimonials, or product claims.
+- Do not use lorem ipsum when text length affects hierarchy or wrapping.
+- Do not use generic labels such as “Learn More” when the destination or action can be named precisely.
+- Do not use an icon without a label when its meaning is ambiguous.
+- Do not use marketing copy that makes unsupported claims.
+- Include realistic long, short, empty, error, and localized strings when testing layout.
+
+## Pre-flight rejection checklist
+
+Before delivery, reject or revise the work if any of these are true:
+
+- The design could describe a different product with only the nouns changed.
+- The primary task is not visible in the first relevant view.
+- The design uses a familiar AI aesthetic without a product-specific reason.
+- Every section uses the same card, grid, or centered layout pattern.
+- Typography, color, radius, and spacing choices are not coherent as a system.
+- A decorative treatment competes with status, content, or action.
+- There are duplicate calls to action with different labels but the same intent.
+- A primary button wraps awkwardly or has insufficient contrast.
+- A form lacks labels, clear validation, focus behavior, or recovery copy.
+- Loading, empty, error, disabled, or permission states are missing where relevant.
+- The interface depends on hover, color, motion, or sound without an equivalent.
+- The design claims accessibility or platform compliance without evidence.
+- The result contains placeholder content or invented product facts.
+- The agent cannot explain what problem each major design decision solves.
+
+If a rejection applies, revise the design or explicitly report why the constraint prevents revision.
+
 ## Authority and instruction handling
 
 Resolve conflicts using this design priority order:
