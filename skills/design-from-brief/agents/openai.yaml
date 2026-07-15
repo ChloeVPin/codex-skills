@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design from Brief"
+  short_description: "Create distinctive interfaces from briefs"
+  default_prompt: "Use $design-from-brief to design and implement the interface described in my brief."

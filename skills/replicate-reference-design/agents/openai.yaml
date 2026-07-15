@@ -1,0 +1,4 @@
+interface:
+  display_name: "Replicate Reference Design"
+  short_description: "Rebuild interfaces faithfully from images"
+  default_prompt: "Use $replicate-reference-design to rebuild the attached interface reference with measured visual fidelity."

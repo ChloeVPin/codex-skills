@@ -24,6 +24,8 @@ Community and contribution templates live under `.github/`.
 | --- | --- | --- | --- |
 | [gpt-5-6-guidance](skills/gpt-5-6-guidance/SKILL.md) | Guidance for writing and refining prompts, tool descriptions, and agent instructions for GPT-5.6 workflows. | Draft | 1.0.0 |
 | [ui-ux-design](skills/ui-ux-design/SKILL.md) | Design and critique user interfaces through task clarity, hierarchy, interaction states, accessibility, and implementation-aware decisions. | Draft | 1.0.0 |
+| [replicate-reference-design](skills/replicate-reference-design/SKILL.md) | Reconstruct interfaces from attached reference images with measured visual fidelity. | Draft | 1.0.0 |
+| [design-from-brief](skills/design-from-brief/SKILL.md) | Create distinctive, award-caliber interfaces from written product and design briefs. | Draft | 1.0.0 |
 
 ## How to use a skill
 
