@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors and IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+~*
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Local AI-agent scratch
+.ai/
+.agents/
+.codex/
+work/
+scratch/
